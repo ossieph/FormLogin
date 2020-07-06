@@ -18,7 +18,7 @@ class Users extends BaseController
 
 			$errors = [
 				'password' => [
-				'validateUser' => 'Email atau Password tidak cocok'
+				'validateUser' => 'Email / Password salah'
 				]
 			];
 
@@ -92,6 +92,12 @@ class Users extends BaseController
 		echo view('templetes/header', $data);
 		echo view('register');
 		echo view('templetes/footer');
+	}
+
+	public function logout(){
+		$session=session();
+		$session->remove('email');
+		return $this->response->redirect(site_url('Users'));
 	}
 	//--------------------------------------------------------------------
 

@@ -99,6 +99,7 @@ class Users extends BaseController
 		$session->remove('email');
 		return $this->response->redirect(site_url('Users'));
 	}
+	
 	//--------------------------------------------------------------------
 
 }
